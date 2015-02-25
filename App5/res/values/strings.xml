@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">App5</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="name">Nome</string>
+    <string name="age">Idade</string>
+    <string name="confirm">Confirmar</string>
+    <string name="newuser">Novo Usuário</string>
+    <string name="refresh">Atualiza dados</string>
+    <string name="back">Voltar</string>
+    <string name="config_name">Configurações</string>
+    <string name="fullscreen">Tela Cheia</string>
+    <string name="data">Dados</string>
+    <string name="register">Cadastro de Usuário</string>
+    <string name="password">Senha</string>
+    <string name="repassword">Repita Senha</string>
+    
+</resources>

@@ -1,0 +1,11 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="br.com.app5.MainActivity" >
+    
+    <item
+      	android:id="@+id/action_config"
+      	android:icon="@drawable/img_config"
+      	android:showAsAction="ifRoom"
+      	android:title="@string/config_name"/>
+
+</menu>
