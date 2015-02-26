@@ -5,7 +5,19 @@
     <item
       	android:id="@+id/action_config"
       	android:icon="@drawable/img_config"
-      	android:showAsAction="ifRoom"
+      	android:showAsAction="always"
       	android:title="@string/config_name"/>
+    
+    <item 
+        android:id="@+id/action_add"
+    	android:icon="@drawable/img_add"
+    	android:showAsAction="always"
+    	android:title="@string/add_name"/>
+    
+    <item 
+        android:id="@+id/action_refresh"
+    	android:icon="@drawable/img_refresh"
+    	android:showAsAction="always"
+    	android:title="@string/refresh_name"/>
 
 </menu>

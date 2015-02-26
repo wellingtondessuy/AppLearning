@@ -1,26 +1,31 @@
 package br.com.app5;
 
+import java.util.ArrayList;
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
+//SQLite--------------
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.support.v4.widget.SimpleCursorAdapter;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.WindowManager;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
-//SQLite--------------
-import android.database.Cursor;
 
 
 //PAREI SEM CONSEGUIR VISUALIZAR OS DADOS DO DB
@@ -34,21 +39,22 @@ public class MainActivity extends Activity implements OnClickListener {
 	private Button btnRegister;
 	private Button btnRefresh;
 	private ListView MostraDados;
-	
+	private TextView txtDados;
+	private ListView stringListView;
 	public static final String PREFS_NAME = "MyPrefsFile";
 	SharedPreferences prefs;
 	
 	//SQLite
 	
-	public static final String KEY_NOMEPESSOA = "nomepessoa";
-	
 	String db_name = "Cadastro";
 	SQLiteDatabase db = null;
-	
 	Cursor cursor;
-	SimpleCursorAdapter AdapterLista;
 	
 	//--------------
+	//Testando ListView
+	ListView listView;
+	
+    //-------------
 	
 	
 	@Override
@@ -57,11 +63,54 @@ public class MainActivity extends Activity implements OnClickListener {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
+		
+		//Testando listView
+		listView = (ListView) findViewById(R.id.list);
+		
+		/*String[] values = new String[] { "Android List View", 
+                 "Adapter implementation",
+                 "Simple List View In Android",
+                 "Create List View Android", 
+                 "Android Example", 
+                 "List View Source Code", 
+                 "List View Array Adapter", 
+                 "Android Example List View" 
+                };
+	
+		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+	              android.R.layout.simple_list_item_1, android.R.id.text1, values);
+		
+		listView.setAdapter(adapter);*/
+		
+		listView.setOnItemClickListener(new OnItemClickListener() {
+			 
+             @Override
+             public void onItemClick(AdapterView<?> parent, View view,
+                int position, long id) {
+               
+              // ListView Clicked item index
+              int itemPosition     = position;
+              
+              // ListView Clicked item value
+              String  itemValue    = (String) listView.getItemAtPosition(position);
+                 
+               // Show Alert 
+               Toast.makeText(getApplicationContext(),
+                 "Position :"+itemPosition+"  ListItem : " +itemValue , Toast.LENGTH_LONG)
+                 .show();
+            
+             }
+
+        });
+		
+		//----------------------------
+		
 		edtName = (EditText) findViewById(R.id.main_edit_name);
 		edtAge = (EditText) findViewById(R.id.main_edit_age);
 		btnConfirm = (Button) findViewById(R.id.main_btn_confirm);
 		btnRegister = (Button) findViewById(R.id.main_btn_register);
 		btnRefresh = (Button) findViewById(R.id.main_btn_refresh);
+		txtDados = (TextView) findViewById(R.id.main_out_text);
 		
 		//Adiciona ao botão o evento de click.
 		btnConfirm.setOnClickListener(this);
@@ -90,7 +139,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		try {
 			
 			db = openOrCreateDatabase(db_name, MODE_WORLD_READABLE, null);
-			String sql = "CREATE TABLE IF NOT EXISTS tabCadastroPessoa (_id INTEGER PRIMARY KEY, nomepessoa TEXT, telefonepessoa TEXT)";
+			String sql = "CREATE TABLE IF NOT EXISTS tabCadastroPessoa (_id INTEGER PRIMARY KEY, nomepessoa VARCHAR(40), telefonepessoa VARCHAR(20))";
 			db.execSQL(sql);
 			MensagemAlerta("Banco de Dados", "Banco criado com sucesso!!");
 		
@@ -112,7 +161,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		
 		try {
 			
-			db = openOrCreateDatabase(db_name, MODE_WORLD_READABLE, null);
+			db = openOrCreateDatabase(db_name, MODE_WORLD_WRITEABLE, null);
 			String sql = "INSERT INTO tabCadastroPessoa (nomepessoa, telefonepessoa) VALUES ('"+ edtName.getText().toString() +"', '" + edtAge.getText().toString() + "')";
 			db.execSQL(sql);
 			MensagemAlerta("Banco de Dados", "Registro gravado com sucesso!!");
@@ -146,6 +195,7 @@ public class MainActivity extends Activity implements OnClickListener {
 			} else return false;
 			
 		} catch (Exception erro) {
+			
 			MensagemAlerta("Banco de Dados", "Não foi possível verificar os dados!");
 			return false;
 			
@@ -160,16 +210,56 @@ public class MainActivity extends Activity implements OnClickListener {
 	}
 	
 	public void CarregaDado () {
+
+		Boolean go = true;
 		
-		MostraDados = (ListView) findViewById(R.id.main_out_text);
 		
 		if (VerificaRegistro()) {
 			
-			String [] Coluna = new String[] {"nomepessoa"};
+			ArrayList<String> values = new ArrayList<String>();
 			
-			AdapterLista = new SimpleCursorAdapter(this, R.layout.activity_main, cursor, Coluna, new int[] {R.id.main_out_text});
-			MostraDados.setAdapter(AdapterLista);
+			//String[] values = new String[5];
+			//Integer i = 0;
+			String data;
 			
+			db = openOrCreateDatabase(db_name, MODE_WORLD_READABLE, null);
+			cursor = db.rawQuery("SELECT * FROM tabCadastroPessoa", null);
+			cursor.moveToFirst();
+
+			try {
+				
+				while(go){
+					
+					data = "\nNome: " + cursor.getString(cursor.getColumnIndex("nomepessoa")) + "\nTelefone: " + cursor.getString(cursor.getColumnIndex("telefonepessoa"));
+					
+					if (cursor.isLast()) go = false;
+					else cursor.moveToNext();
+				
+					values.add(data);
+					
+					//values[i] = data;
+					//i++;
+					
+				}
+				
+				//txtDados.setText( data );
+				
+				ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+			              android.R.layout.simple_list_item_1, android.R.id.text1, values);
+				
+				listView.setAdapter(adapter);
+				
+			} catch (Exception erro) {
+				
+				MensagemAlerta("Banco de Dados", "Oops! Ocorreu um erro ao recuperar os dados. \n" + erro);
+			
+			}
+			
+			finally {
+				
+				db.close();
+				
+			}
 			
 		} else {
 			
@@ -215,6 +305,7 @@ public class MainActivity extends Activity implements OnClickListener {
 			GravaDado();
 		} else if (v.getId() == R.id.main_btn_refresh) {
 			
+			//MensagemAlerta("Banco de Dados", "Resposta sobre existência de dados no DB: " + VerificaRegistro());
 			CarregaDado();
 			
 		}
@@ -250,6 +341,12 @@ public class MainActivity extends Activity implements OnClickListener {
 	        	Intent intent = new Intent (this, ConfigActivity.class);
 				startActivity(intent);
 	            return true;
+	        case R.id.action_add:
+	        	GravaDado();
+	        	return true;
+	        case R.id.action_refresh:
+	        	CarregaDado();
+	        	return true;
 	        default:
 	            return super.onOptionsItemSelected(item);
 	    }

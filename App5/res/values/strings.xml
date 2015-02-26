@@ -11,6 +11,8 @@
     <string name="refresh">Atualiza dados</string>
     <string name="back">Voltar</string>
     <string name="config_name">Configurações</string>
+    <string name="add_name">Adicionar</string>
+    <string name="refresh_name">Atualizar dados</string>
     <string name="fullscreen">Tela Cheia</string>
     <string name="data">Dados</string>
     <string name="register">Cadastro de Usuário</string>
