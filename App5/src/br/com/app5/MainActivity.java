@@ -11,6 +11,8 @@ import android.content.SharedPreferences.Editor;
 //SQLite--------------
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+//--------------------
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -38,6 +40,12 @@ public class MainActivity extends Activity implements OnClickListener {
 	private Button btnConfirm;
 	private Button btnRegister;
 	private Button btnRefresh;
+	
+	private Button btnPlay;
+	private Button btnPause;
+	private Button btnStop;
+	private MediaPlayer mediaPlayer;
+	
 	private ListView MostraDados;
 	private TextView txtDados;
 	private ListView stringListView;
@@ -110,12 +118,23 @@ public class MainActivity extends Activity implements OnClickListener {
 		btnConfirm = (Button) findViewById(R.id.main_btn_confirm);
 		btnRegister = (Button) findViewById(R.id.main_btn_register);
 		btnRefresh = (Button) findViewById(R.id.main_btn_refresh);
+		
+		btnPlay = (Button) findViewById(R.id.main_btn_play);
+		btnPause = (Button) findViewById(R.id.main_btn_pause);
+		btnStop = (Button) findViewById(R.id.main_btn_stop);
+		mediaPlayer = MediaPlayer.create(this, R.raw.beep_11);
+
+		
 		txtDados = (TextView) findViewById(R.id.main_out_text);
 		
 		//Adiciona ao botão o evento de click.
 		btnConfirm.setOnClickListener(this);
 		btnRegister.setOnClickListener(this);
 		btnRefresh.setOnClickListener(this);
+		
+		btnPlay.setOnClickListener(this);
+		btnPause.setOnClickListener(this);
+		btnStop.setOnClickListener(this);
 		
 		prefs = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
 		
@@ -307,6 +326,20 @@ public class MainActivity extends Activity implements OnClickListener {
 			
 			//MensagemAlerta("Banco de Dados", "Resposta sobre existência de dados no DB: " + VerificaRegistro());
 			CarregaDado();
+			
+		} else if (v.getId() == R.id.main_btn_play) {
+			
+			mediaPlayer.start();
+			
+		} else if (v.getId() == R.id.main_btn_pause) {
+			
+			mediaPlayer.pause();
+			
+		} else if (v.getId() == R.id.main_btn_stop) {
+			
+			//mediaPlayer.stop();
+			Intent intent = new Intent (this, PlayActivity.class);
+			startActivity(intent);
 			
 		}
 	}

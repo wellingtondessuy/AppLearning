@@ -18,5 +18,8 @@
     <string name="register">Cadastro de Usuário</string>
     <string name="password">Senha</string>
     <string name="repassword">Repita Senha</string>
+    <string name="play">Play</string>
+    <string name="pause">Pause</string>
+    <string name="stop">Stop</string>
     
 </resources>

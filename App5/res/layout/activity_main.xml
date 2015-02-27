@@ -54,6 +54,27 @@
         android:orientation="horizontal">
         
         <Button 
+	    	android:id="@+id/main_btn_play"
+	    	android:layout_width="0dp"	    	
+	    	android:layout_height="wrap_content"
+	    	android:layout_weight="1"
+	    	android:text="@string/play"/>
+        
+        <Button 
+	    	android:id="@+id/main_btn_pause"
+	    	android:layout_width="0dp"	    	
+	    	android:layout_height="wrap_content"
+	    	android:layout_weight="1"
+	    	android:text="@string/pause"/>
+        
+        <Button 
+	    	android:id="@+id/main_btn_stop"
+	    	android:layout_width="0dp"	    	
+	    	android:layout_height="wrap_content"
+	    	android:layout_weight="1"
+	    	android:text="@string/stop"/>
+        
+        <Button 
 	    	android:id="@+id/main_btn_confirm"
 	    	android:layout_width="0dp"	    	
 	    	android:layout_height="wrap_content"
