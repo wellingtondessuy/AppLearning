@@ -29,9 +29,9 @@ public final class R {
         public static final int img_search=0x7f020004;
     }
     public static final class id {
-        public static final int action_add=0x7f090013;
-        public static final int action_config=0x7f090012;
-        public static final int action_refresh=0x7f090014;
+        public static final int action_add=0x7f090014;
+        public static final int action_config=0x7f090013;
+        public static final int action_refresh=0x7f090015;
         public static final int checkbox_fullscreen=0x7f090000;
         public static final int config_btn_back=0x7f090001;
         public static final int config_btn_data=0x7f090002;
@@ -46,10 +46,11 @@ public final class R {
         public static final int main_edit_name=0x7f090003;
         public static final int main_out_text=0x7f090005;
         public static final int play_textview=0x7f09000d;
-        public static final int useradd_edit_age=0x7f09000f;
-        public static final int useradd_edit_name=0x7f09000e;
-        public static final int useradd_edit_password=0x7f090010;
-        public static final int useradd_edit_repassword=0x7f090011;
+        public static final int play_textview2=0x7f09000e;
+        public static final int useradd_edit_age=0x7f090010;
+        public static final int useradd_edit_name=0x7f09000f;
+        public static final int useradd_edit_password=0x7f090011;
+        public static final int useradd_edit_repassword=0x7f090012;
     }
     public static final class layout {
         public static final int activity_config=0x7f030000;
