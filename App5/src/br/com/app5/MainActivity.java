@@ -14,6 +14,8 @@ import android.database.sqlite.SQLiteDatabase;
 //--------------------
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.Handler;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -297,8 +299,14 @@ public class MainActivity extends Activity implements OnClickListener {
 		message.show();
 		
 	}
-	
 	//---------------------
+	@Override
+	 public void onAttachedToWindow() {
+	  // TODO Auto-generated method stub
+	     super.onAttachedToWindow();
+	 }
+	
+	//-------
 	
 	/**
 	 * Evento de click chamado através do xml.
