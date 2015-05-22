@@ -1,0 +1,43 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_gravity="top"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/back_1"
+    tools:context="com.example.themetest.MainActivity" >
+
+    	<android.support.v4.view.ViewPager xmlns:android="http://schemas.android.com/apk/res/android"
+	    xmlns:tools="http://schemas.android.com/tools"
+	    android:id="@+id/pager"
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    tools:context="com.example.happyapp.MainActivity" />
+	
+	<Button
+            android:id="@+id/main_button_signup"
+            android:text="@string/signup"
+            android:textSize="18sp"
+			android:textColor="#FFFFFF"
+			android:layout_marginLeft="10dp"
+			android:layout_marginRight="10dp"
+            android:layout_width="fill_parent"
+        	android:layout_height="wrap_content"
+        	android:layout_centerHorizontal="true"
+        	android:layout_alignParentBottom="true"
+            android:layout_marginBottom="55dp"
+            android:elevation="8dp"
+            android:background="@drawable/circlebutton"
+			android:tint="@android:color/white"/>
+	
+	<Button android:background="@android:color/transparent"
+			android:text="@string/login"
+			android:textSize="14sp"
+			android:id="@+id/main_button_login"
+			android:layout_width="fill_parent"
+        	android:layout_height="wrap_content"
+        	android:layout_marginBottom="5dp"
+        	android:layout_centerHorizontal="true"
+        	android:layout_alignParentBottom="true"
+			android:textColor="#FFFFFF" />
+
+</RelativeLayout>

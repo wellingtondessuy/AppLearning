@@ -1,0 +1,11 @@
+INDEX VERSION 1.127+/home/wellington/Documentos/Backup 11-03-2014  Wellington/Android/Projects/AppLearning/.metadata/.plugins/org.eclipse.jdt.core
+448086061.index
+1270315800.index
+2254252784.index
+2590795353.index
+4243660020.index
+232945636.index
+217076839.index
+3886200913.index
+2338759957.index
+340988554.index

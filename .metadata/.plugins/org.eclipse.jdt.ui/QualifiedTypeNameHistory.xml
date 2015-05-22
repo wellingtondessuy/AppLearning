@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="com.example.themetest.R.layout"/>
+<fullyQualifiedTypeName name="com.example.themetest.R.id"/>
+<fullyQualifiedTypeName name="android.view.Window"/>
+<fullyQualifiedTypeName name="android.app.FragmentManager"/>
+<fullyQualifiedTypeName name="android.app.Fragment"/>
+<fullyQualifiedTypeName name="android.support.v4.app.FragmentStatePagerAdapter"/>
+<fullyQualifiedTypeName name="com.example.happyapp.MainActivity.SectionsPagerAdapter"/>
+<fullyQualifiedTypeName name="android.support.v4.view.ViewPager"/>
+<fullyQualifiedTypeName name="android.support.v4.app.FragmentActivity"/>
+<fullyQualifiedTypeName name="android.view.View.OnClickListener"/>
+<fullyQualifiedTypeName name="com.example.happyapp.R.id"/>
+</qualifiedTypeNameHistroy>

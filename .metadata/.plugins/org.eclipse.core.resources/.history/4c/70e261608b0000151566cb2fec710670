@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ThemeTest</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_profile">ProfileActivity</string>
+    <string name="back">Voltar</string>
+    <string name="add">Adicionar</string>
+    <string name="cancel">Cancelar</string>
+    <string name="cadastre">Cadastro</string>
+    <string name="name">Nome</string>
+    <string name="email">Email</string>
+    <string name="repeatemail">Repita o email</string>
+    <string name="password">Senha</string>
+    <string name="repeatpassword">Repita a senha</string>
+	<string name="signup">Quero ser sócio!</string>
+    
+</resources>

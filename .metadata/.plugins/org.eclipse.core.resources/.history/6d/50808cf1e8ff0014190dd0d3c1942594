@@ -1,0 +1,121 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.themetest.ProfileActivity" >
+
+    <android.support.v4.view.ViewPager
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/pager"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" />
+    <ImageButton
+        android:id="@+id/cancel_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@drawable/circlebutton"
+        android:contentDescription="@string/cancel"
+        android:elevation="12dp"
+        android:padding="11dp"
+        android:src="@drawable/arrow_left"
+        android:tint="@android:color/white" />
+
+    <EditText
+        android:id="@+id/editName"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/cancel_button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/myrect"
+        android:ems="10"
+        android:hint="@string/name"
+        android:elevation="12dp"
+        android:gravity="center"
+        android:inputType="textCapWords"
+        android:singleLine="true" />
+
+    <EditText
+        android:id="@+id/editEmail"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_alignLeft="@+id/editName"
+        android:layout_below="@+id/editName"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/myrect"
+        android:ems="10"
+        android:hint="@string/email"
+        android:elevation="12dp"
+        android:gravity="center"
+        android:inputType="textEmailAddress"
+        android:singleLine="true" />
+
+    <EditText
+        android:id="@+id/editRepeatEmail"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_alignLeft="@+id/editEmail"
+        android:layout_below="@+id/editEmail"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/myrect"
+        android:ems="10"
+        android:hint="@string/repeatemail"
+        android:elevation="12dp"
+        android:gravity="center"
+        android:inputType="textEmailAddress"
+        android:singleLine="true" />
+
+    <EditText
+        android:id="@+id/editPassword"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_alignLeft="@+id/editRepeatEmail"
+        android:layout_below="@+id/editRepeatEmail"
+        android:layout_marginTop="14dp"
+        android:background="@drawable/myrect"
+        android:ems="10"
+        android:hint="@string/password"
+        android:elevation="12dp"
+        android:gravity="center"
+        android:inputType="textPassword"
+        android:singleLine="true" />
+
+    <EditText
+        android:id="@+id/editRepeatPassword"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_alignLeft="@+id/editPassword"
+        android:layout_below="@+id/editPassword"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/myrect"
+        android:ems="10"
+        android:hint="@string/repeatpassword"
+        android:elevation="12dp"
+        android:gravity="center"
+        android:inputType="textPassword"
+        android:singleLine="true" >
+
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/cancel_button"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:text="@string/cadastre"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:typeface="monospace" />
+
+</RelativeLayout>

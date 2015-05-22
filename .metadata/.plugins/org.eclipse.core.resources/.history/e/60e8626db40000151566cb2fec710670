@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">HappyApp</string>
+    <string name="title_section1">Section 1</string>
+    <string name="title_section2">Section 2</string>
+    <string name="title_section3">Section 3</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="signup">Quero ser sócio!</string>
+    <string name="login">Já sou sócio</string>
+    <string name="presentation1">Associe-se e tenha muitas vantagens na hora de torcer</string>
+    <string name="presentation2">Vantagem 1</string>
+    <string name="presentation3">Vantagem 2</string>
+    <string name="presentation4">Vantagem 3</string>
+    <string name="presentation5">Vantagem 4</string>
+    <string name="logo_description">Logo do Time</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="title_activity_register">RegisterActivity</string>
+
+</resources>

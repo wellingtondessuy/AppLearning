@@ -1,0 +1,35 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/back_wf"
+    tools:context="com.example.happyapp.LoginActivity" >
+
+    <RelativeLayout 
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        
+	    <EditText 
+	        android:id="@+id/login_user"
+	        android:hint="@string/username_or_email"
+	        android:textColorHint="#FFFFFF"
+	        android:layout_width="fill_parent"
+	        android:layout_height="fill_parent"
+	        />
+	
+	    <EditText 
+	        android:id="@+id/login_password"
+	        android:hint="@string/password"
+	        android:textColorHint="#FFFFFF"
+	        android:inputType="textPassword"
+	        android:layout_width="fill_parent"
+	        android:layout_height="fill_parent"
+	        />    
+    </RelativeLayout>
+    
+</LinearLayout>
